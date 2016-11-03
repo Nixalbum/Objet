@@ -5,7 +5,7 @@ compiler: gcc
 script: 
  # - $CXX --version
   - echo $CXXFLAGS
-  - cd ~/Quasar
+  - cd ~/build/Nixalbum/Wall-in/prog/src
   - $CXX -g $CXXFLAGS Quasar.cpp Joueur.cpp Jeu.cpp Humain.cpp CarteBancaire.cpp  -o quasar
   - ./quasar
   - valgrind --leak-check=full --show-reachable=yes ./quasar
