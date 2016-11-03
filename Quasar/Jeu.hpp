@@ -11,7 +11,7 @@ class Jeu{
 		virtual void recommencer(CarteBancaire){}
 		virtual void bouton1(){}
 		virtual void bouton2(){}
-		virtual bool retirerGain(CarteBancaire){}
+		virtual bool retirerGain(CarteBancaire){return false;}
 		void voirScore();
 };
 #endif
