@@ -1,3 +1,15 @@
 language: cpp
 
 compiler: gcc
+
+before_install:
+  - sudo apt-get install valgrind
+  
+script: 
+  - $CXX --version
+  - echo $CXXFLAGS
+  - ls ~
+  - ls ~/build
+  - cd ~/build/nixalbum/
+  - make
+  - valgrind --leak-check=full --show-reachable=yes /Quasar/bin/Quasar
