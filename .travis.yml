@@ -11,7 +11,7 @@ install:
   # - sudo apt-get install -qq libboost1.48-dev libboost-test1.48-dev
 
   # g++4.8.1
-  - if [ "$CXX" = "g++" ]; then sudo apt-get install -qq g++-4.8; fi
+  - if [ "$CXX" = "g++" ]; then sudo apt-get install -qq gcc-4.8; fi
   - if [ "$CXX" = "g++" ]; then sudo apt-get install -qq libstdc++6-4.7-dev; fi
   - if [ "$CXX" = "g++" ]; then export CXXFLAGS="-std=c++11"; fi
   - if [ "$CXX" = "g++" ]; then export CXX="g++-4.8"; fi
