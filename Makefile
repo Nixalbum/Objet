@@ -2,17 +2,17 @@
 EXEC=Quasar
 
 # Compiler
-#IDIR=include include/constraints include/domains include/misc include/objectives include/variables
-#IDIRFLAG=$(foreach idir, $(IDIR), -I$(idir))
-CXXFLAGS=-std=c++11 -Ofast -W -Wall -Wextra -pedantic -Wno-sign-compare -Wno-unused-parameter $(IDIRFLAG)
+IDIR=
+IDIRFLAG=$(foreach idir, $(IDIR), -I$(idir))
+CXXFLAGS=-std=c++0x -g -Wall $(IDIRFLAG)
 
 # Linker
 LFLAGS=$(IDIRFLAG)
 
 # Directories
-SRCDIR=src src/constraints src/domains src/misc src/objectives src/variables
-OBJDIR=obj
-BINDIR=bin
+SRCDIR=Quasar/src
+OBJDIR=Quasar/obj
+BINDIR=Quasar/bin
 
 # Files
 SOURCES=$(foreach sdir, $(SRCDIR), $(wildcard $(sdir)/*.cpp))

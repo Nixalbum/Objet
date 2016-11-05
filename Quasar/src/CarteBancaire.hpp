@@ -7,5 +7,6 @@ class CarteBancaire{
 		CarteBancaire(int);
 		void depot(int);
 		bool retrait(int);
+		int getSolde();
 };
 #endif

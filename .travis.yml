@@ -1,11 +1,23 @@
 language: cpp
 
-compiler: gcc
+compiler: g++
 
+before_install:
+  - sudo apt-get install valgrind
+install:
+  - if [ "$CXX" = "g++" ]; then export CXX="g++-4.8" CC="gcc-4.8"; fi
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - gcc-4.8
+    - g++-4.8
+  
 script: 
- # - $CXX --version
+  - $CXX --version
   - echo $CXXFLAGS
-  - cd ~/build/Nixalbum/Wall-in/prog/src/Quasar
-  - $CXX -g $CXXFLAGS Quasar.cpp Joueur.cpp Jeu.cpp Humain.cpp CarteBancaire.cpp  -o quasar
-  - ./quasar
-  - valgrind --leak-check=full --show-reachable=yes ./quasar
+  - ls ~/build/Nixalbum/Objet
+  - cd ~/build/Nixalbum/Objet/
+  - make
+  - valgrind --leak-check=full --show-reachable=yes Quasar/bin/Quasar bot
