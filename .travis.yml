@@ -10,6 +10,6 @@ script:
   - echo $CXXFLAGS
   - ls ~
   - ls ~/build
-  - cd ~/build/nixalbum/
+  - cd ~/build/Nixalbum/
   - make
   - valgrind --leak-check=full --show-reachable=yes /Quasar/bin/Quasar
