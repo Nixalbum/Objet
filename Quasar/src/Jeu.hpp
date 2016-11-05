@@ -8,10 +8,11 @@ class Jeu{
 		int score_;
 	public:
 		Jeu();
-		virtual void recommencer(CarteBancaire){}
+		virtual void recommencer(CarteBancaire*){}
 		virtual void bouton1(){}
 		virtual void bouton2(){}
-		virtual bool retirerGain(CarteBancaire){return false;}
+		virtual bool retirerGain(CarteBancaire*){return false;}
 		void voirScore();
+		int getScore();
 };
 #endif

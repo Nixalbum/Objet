@@ -5,9 +5,11 @@ Quasar::Quasar(){
 }
 
 int Quasar::getRandom(int a, int b){
-	std::default_random_engine generator;
+	std::random_device d;
+	std::default_random_engine generator(d());
 	std::uniform_int_distribution<int> distribution(a,b);
 	return distribution(generator);
+	return 0;
 }
 bool Quasar::stop(){
 	return score_ > 20;
@@ -16,6 +18,7 @@ void Quasar::bouton1(){
 	if(enCours_){
 		score_ += getRandom(4,7);
 		enCours_ = !stop();
+		
 	}
 }
 void Quasar::bouton2(){
@@ -24,14 +27,14 @@ void Quasar::bouton2(){
 		enCours_ = !stop();
 	}
 }
-bool Quasar::retirerGain(CarteBancaire cb){
-	if(!enCours_ || score_ < 15){
-		std::cout<<"Pas de partie en cours ou on ne peut pas arreter avec un score de "<<score_<<"\n";
+bool Quasar::retirerGain(CarteBancaire* cb){
+	if(enCours_ && score_ < 15){
+		std::cout<<"Partie en cours et on ne peut pas arreter avec un score de "<<score_<<"\n";
 		return false;
+	}else if(!enCours_){
+		std::cout<<"PPas de partie en cours, pas de gain a retirer \n";
+		return true;
 	}else{
-		if(score_ <= 20){
-			enCours_ = false;
-		}
 		int gain = 0;
 		switch (score_){
 			case 15:
@@ -55,12 +58,12 @@ bool Quasar::retirerGain(CarteBancaire cb){
 			default:
 				gain = 0;
 		}
-		cb.depot(gain);
+		cb->depot(gain);
 		return true;
 	}
 }
-void Quasar::recommencer(CarteBancaire cb){
-	if(cb.retrait(20)){
+void Quasar::recommencer(CarteBancaire* cb){
+	if(cb->retrait(20)){
 		enCours_ = true;
 		score_ = 1;
 	}

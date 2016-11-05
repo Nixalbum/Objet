@@ -23,4 +23,4 @@ script:
   - ls ~/build/Nixalbum/Objet
   - cd ~/build/Nixalbum/Objet/
   - make
-  - valgrind --leak-check=full --show-reachable=yes Quasar/bin/Quasar
+  - valgrind --leak-check=full --show-reachable=yes Quasar/bin/Quasar ghost

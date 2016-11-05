@@ -1,12 +1,12 @@
-#ifndef HUMAIN_HPP
-#define HUMAIN_HPP
+#ifndef ROBOT_HPP
+#define ROBOT_HPP
 #include "Joueur.hpp"
 #include "Jeu.hpp"
 #include <string>
 #include <iostream>
-class Humain : public Joueur{
+class Robot : public Joueur{
 	public:
-		Humain(int);
+		Robot(int, std::string);
 		void joue(Jeu*);
 };
 #endif

@@ -7,3 +7,6 @@ void Joueur::recoit(int a){
 void Joueur::donner(int a){
 	cb_.retrait(a);
 }
+int Joueur::argent(){
+	return cb_.getSolde();
+}
