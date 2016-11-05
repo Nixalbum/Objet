@@ -8,8 +8,8 @@ before_install:
 script: 
   - $CXX --version
   - echo $CXXFLAGS
-  - ls ~
-  - ls ~/build
-  - cd ~/build/Nixalbum/
+  - ls ~/build/Nixalbum/
+  - ls ~/build/Nixalbum/Wall-in
+  - cd ~/build/Nixalbum/Wall-in/
   - make
-  - valgrind --leak-check=full --show-reachable=yes /Quasar/bin/Quasar
+  - valgrind --leak-check=full --show-reachable=yes Quasar/bin/Quasar
