@@ -7,6 +7,6 @@
 class Humain : public Joueur{
 	public:
 		Humain(int);
-		void joue(Quasar);
+		void joue(Jeu*);
 };
 #endif

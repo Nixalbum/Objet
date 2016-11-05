@@ -5,12 +5,13 @@
 class Joueur{
 	protected:
 		CarteBancaire cb_;
-		Quasar jeu_;
+		Jeu * jeu_;
 	public:
 		Joueur(int);
-		virtual void joue(Jeu){}
+		virtual void joue(Jeu *){}
 		void recoit(int);
 		void donner(int);
+		int argent();
 };
 
 
