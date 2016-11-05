@@ -4,7 +4,7 @@ EXEC=Quasar
 # Compiler
 IDIR=
 IDIRFLAG=$(foreach idir, $(IDIR), -I$(idir))
-CXXFLAGS=-std=c++11 -Ofast -g -Wall $(IDIRFLAG)
+CXXFLAGS=-std=c++0x -g -Wall $(IDIRFLAG)
 
 # Linker
 LFLAGS=$(IDIRFLAG)
