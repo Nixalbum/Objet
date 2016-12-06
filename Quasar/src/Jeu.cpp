@@ -18,14 +18,23 @@ This file is part of Quasar.
 #include "Jeu.hpp"
 
 
-Jeu::Jeu(){
-	enCours_ = false;
-	score_ = 0;
+Jeu::Jeu():enCours_(false),score_(0){
 	std::cout<<"Construit jeu \n";
 }
+/*void Jeu::commencerJeu(Jeu* j,CarteBancaire* cb){
+	if(!this->getEtat()&& !j->getEtat()){//Si le jeu n'est pas en cours
+		//this = j;
+		j->recommencer(cb);
+	}else{
+		std::cout<<"Il faut d'abord finir le jeu en cours, ou on ne peut pas rejoindre un jeu en cours\n";
+	}
+}*/
 void Jeu::voirScore(){
 	std::cout<<"Score actuel :"<<score_<<"\n";
 }
 int Jeu::getScore(){
 	return score_;
+}
+bool Jeu::getEtat(){
+	return enCours_;
 }

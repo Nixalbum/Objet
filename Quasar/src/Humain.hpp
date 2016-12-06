@@ -19,11 +19,23 @@ This file is part of Quasar.
 #define HUMAIN_HPP
 #include "Joueur.hpp"
 #include "Jeu.hpp"
+#include <SDL.h>
 #include <string>
 #include <iostream>
+enum ChoixPossible{
+	AUCUN = 0,
+	BOUTON1 = 1,
+	BOUTON2 = 2,
+	QUITTER = 3,
+	RETOUR = 4
+};
 class Humain : public Joueur{
+	private:
+		Jeu * jeu_;
+		ChoixPossible chxAct_;
 	public:
 		Humain(int);
-		void joue(Jeu*);
+		void joue();
+		void handleEvent(SDL_Event * e);
 };
 #endif

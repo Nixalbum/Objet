@@ -20,8 +20,7 @@ This file is part of Quasar.
 Robot::Robot(int a, std::string jeu) : Joueur(a){
 	//Se servir du string pour changer comportement jeu
 }
-void Robot::joue(Jeu* j){
-	jeu_ = j;
+void Robot::joue(){
 	jeu_->recommencer(&cb_);
 	bool joue = true;
 	int score;

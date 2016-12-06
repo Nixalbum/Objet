@@ -27,3 +27,6 @@ void Joueur::donner(int a){
 int Joueur::argent(){
 	return cb_.getSolde();
 }
+CarteBancaire* Joueur::getCB(){
+	return &cb_;
+}

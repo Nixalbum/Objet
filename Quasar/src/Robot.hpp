@@ -24,6 +24,6 @@ This file is part of Quasar.
 class Robot : public Joueur{
 	public:
 		Robot(int, std::string);
-		void joue(Jeu*);
+		void joue();
 };
 #endif

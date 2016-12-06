@@ -25,7 +25,8 @@ class Joueur{
 		Jeu * jeu_;
 	public:
 		Joueur(int);
-		virtual void joue(Jeu *){}
+		virtual void joue(){}
+		CarteBancaire* getCB();
 		void recoit(int);
 		void donner(int);
 		int argent();

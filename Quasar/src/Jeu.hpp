@@ -18,6 +18,7 @@ This file is part of Quasar.
 #ifndef JEU_HPP
 #define JEU_HPP
 #include <iostream>
+#include <SDL.h>
 #include "CarteBancaire.hpp"
 class Jeu{
 	protected:
@@ -29,7 +30,9 @@ class Jeu{
 		virtual void bouton1(){}
 		virtual void bouton2(){}
 		virtual bool retirerGain(CarteBancaire*){return false;}
+		//void commencerJeu(Jeu* j);
 		void voirScore();
 		int getScore();
+		bool getEtat();
 };
 #endif

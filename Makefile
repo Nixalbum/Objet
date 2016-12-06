@@ -2,12 +2,12 @@
 EXEC=Quasar
 
 # Compiler
-IDIR=
-IDIRFLAG=$(foreach idir, $(IDIR), -I$(idir))
-CXXFLAGS=-std=c++0x -g -Wall $(IDIRFLAG)
+IDIR=`lib/bin/sdl2-config --cflags --libs`
+#IDIRFLAG=$(foreach idir, $(IDIR), -I$(idir))
+CXXFLAGS=-std=c++0x -g -Wall $(IDIR)
 
 # Linker
-LFLAGS=$(IDIRFLAG)
+LFLAGS=$(IDIR)
 
 # Directories
 SRCDIR=Quasar/src
@@ -42,25 +42,13 @@ gcc-debug: LINKER=g++ -o
 gcc-debug: CXXFLAGS += -g
 gcc-debug: $(BINDIR)/$(EXEC)
 
-clang: clean
-clang: CXX=clang++
-clang: LINKER=clang++ -o
-clang: CXXFLAGS += -DNDEBUG -stdlib=libc++
-clang: $(BINDIR)/$(EXEC)
-
-clang-debug: clean
-clang-debug: CXX=clang++
-clang-debug: LINKER=clang++ -o
-clang-debug: CXXFLAGS += -g -stdlib=libc++
-clang-debug: $(BINDIR)/$(EXEC)
-
 $(BINDIR)/$(EXEC): $(OBJECTS)
 	@$(LINKER) $@ $(LFLAGS) $^
 
 $(OBJDIR)/%.o: %.cpp
 	@$(CXX) $(CXXFLAGS) -c $< -o $@
 
-.PHONY: gcc gcc-debug clang clang-debug clean 
+.PHONY: gcc gcc-debug clean 
 
 clean:
 	rm -fr core *~ $(OBJECTS) $(BINDIR)/$(EXEC) $(SOURCESTILDE) $(INCLUDESTILDE)

@@ -18,7 +18,7 @@ This file is part of Quasar.
 #include "Quasar.hpp"
 Quasar::Quasar(){
 	//auto super()
-	score_ = 1;
+	score_=  1;
 }
 
 int Quasar::getRandom(int a, int b){
@@ -49,7 +49,7 @@ bool Quasar::retirerGain(CarteBancaire* cb){
 		std::cout<<"Partie en cours et on ne peut pas arreter avec un score de "<<score_<<"\n";
 		return false;
 	}else if(!enCours_){
-		std::cout<<"PPas de partie en cours, pas de gain a retirer \n";
+		std::cout<<"Pas de partie en cours, pas de gain a retirer \n";
 		return true;
 	}else{
 		int gain = 0;
@@ -76,6 +76,7 @@ bool Quasar::retirerGain(CarteBancaire* cb){
 				gain = 0;
 		}
 		cb->depot(gain);
+		enCours_ = false;
 		return true;
 	}
 }
@@ -85,3 +86,5 @@ void Quasar::recommencer(CarteBancaire* cb){
 		score_ = 1;
 	}
 }
+
+
