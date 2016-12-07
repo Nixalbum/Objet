@@ -2,7 +2,9 @@
 EXEC=Quasar
 
 # Compiler
-IDIR= `lib/bin/sdl2-config --cflags --libs --static-libs`
+#IDIR= `lib/bin/sdl2-config --cflags --libs --static-libs`
+IDIR=-I./lib/include/SDL2 -D_REENTRANT -L./lib/lib -Wl,-rpath,./lib/lib -Wl,--enable-new-dtags -lSDL2
+
 #IDIRFLAG=$(foreach idir, $(IDIR), -I$(idir))
 CXXFLAGS=-std=c++0x -g -Wall $(IDIR)
 
