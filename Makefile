@@ -1,7 +1,7 @@
 # Project name
 EXEC=Quasar
 
-# Compiler
+# Compiler-D_REENTRANT -L./lib/lib -Wl,-rpath,./lib/lib -Wl,--enable-new-dtags
 #IDIR= `lib/bin/sdl2-config --cflags --libs --static-libs`
 IDIR=-I./lib/include/SDL2 -D_REENTRANT -L./lib/lib -Wl,-rpath,./lib/lib -Wl,--enable-new-dtags -lSDL2
 

@@ -18,7 +18,7 @@ This file is part of Quasar.
 #include "Humain.hpp"
 #include "Robot.hpp"
 #include "Quasar.hpp"
-#include "SDL.h"
+#include <SDL.h>
 SDL_Rect b1,b2;
 void dessinerQuasar(SDL_Surface* screen){
 	b1.x = 0;
