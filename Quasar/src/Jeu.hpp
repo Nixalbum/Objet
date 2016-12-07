@@ -18,7 +18,6 @@ This file is part of Quasar.
 #ifndef JEU_HPP
 #define JEU_HPP
 #include <iostream>
-#include <SDL.h>
 #include "CarteBancaire.hpp"
 class Jeu{
 	protected:

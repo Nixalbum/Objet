@@ -19,7 +19,6 @@ This file is part of Quasar.
 #define HUMAIN_HPP
 #include "Joueur.hpp"
 #include "Jeu.hpp"
-#include <SDL.h>
 #include <string>
 #include <iostream>
 enum ChoixPossible{
@@ -36,6 +35,5 @@ class Humain : public Joueur{
 	public:
 		Humain(int);
 		void joue();
-		void handleEvent(SDL_Event * e);
 };
 #endif
